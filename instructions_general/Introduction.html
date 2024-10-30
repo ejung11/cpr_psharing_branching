@@ -1,0 +1,97 @@
+{% extends "global/Page.html" %}
+{% load static %}
+
+{{ block style }}
+   <link rel="stylesheet" type="text/css" href="{{ static 'global/global_styles.css' }}"/>
+    <style>
+       h5 {
+           text-decoration: underline;
+       }
+   </style>
+{{ endblock }}
+
+
+{{ block title }}
+     <div class="narrow-body">
+    Welcome
+    </div>
+{{ endblock }}
+
+{{ block content }}
+
+
+<div class="narrow-body">
+
+    <div class="instructions-subheading">No Talking Allowed</div>
+
+    <p>
+        Now that the experiment has begun, we ask that you do not communicate with other participants.
+        If you have any questions after we finish reading the instructions,
+        please raise your hand and the experimenter will answer your question in private.</p>
+
+    <div class="instructions-subheading">Complete Privacy</div>
+
+<!--    Single Blind Procedure-->
+    <p>
+        This experiment is structured so that no one, including the experimenters, the monitor,
+        and the other subjects will ever know the personal decision of anyone in the experiment.
+        Every person's privacy is guaranteed because neither his/her name nor student ID number
+        will appear on any form that records decisions in this experiment.
+    </p>
+
+<!--    Double Blind Procedure-->
+<!--    <p>-->
+<!--        This experiment is structured so that no one, including the experimenters or the other participants,-->
+<!--        will ever know your personal decision or money earnings in the experiment.-->
+<!--        This is accomplished by giving you the only key to a numbered mailbox that contains a sealed envelope with your earnings inside.-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        Your privacy is guaranteed because neither your name nor student ID number will be entered into the computer-->
+<!--        that records your decisions in the experiment.-->
+<!--        The only identifying information that will be used is the number on the mailbox key that has been given to you.-->
+<!--        You will collect your money payoffs with privacy by using the key, which opens a mailbox located in the reception room.-->
+<!--        The key and mailbox are labeled with the same number. You are the only person who knows your key and mailbox number.-->
+<!--    </p>-->
+
+    <div class="instructions-subheading">Two Parts: 10 Rounds Each</div>
+
+    <p>
+        In this experiment, there will be two parts, each consisting of ten rounds.
+        Your final earnings will be the <strong>sum of the earnings from both parts</strong>.
+    </p>
+
+    <div class="instructions-subheading">Random Matching and Anonymity</div>
+
+    <p>
+        In this experiment, you will be randomly assigned to a <strong>group of 8</strong> people. <br>
+        The group you are assigned to will <strong>stay the same throughout each part</strong>. <br>
+        The group will be <strong>reassigned</strong> randomly at the beginning of Part 2.
+
+    </p>
+
+    <div class="instructions-subheading">Cash Payoffs</div>
+    <p>
+        Your earnings in this experiment are expressed in <i><span class="ecu">Experimental Dollars (E$)</span></i>,
+        which we will refer to as <b><span class="ecu">E$</span></b>.
+        At the conclusion of the experiment you will be paid in U.S. dollars
+        using a conversion rate of $1 for every E$300 of earnings from the experiment.
+    </p>
+
+    <p><strong>E$300 = $1</strong></p>
+
+    <p>
+        If you read the instructions carefully and act wisely, you can earn a considerable amount of money.
+        Your earnings in this experiment depend both on your decisions and the decisions of others.
+    </p>
+
+    <p>
+        If you have any questions, please raise your hand and wait for the experimenter to come and help you.
+    </p>
+
+    {{ next_button }}
+
+</div>
+
+
+
+{{ endblock }}

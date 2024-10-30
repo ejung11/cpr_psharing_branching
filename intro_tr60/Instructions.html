@@ -1,0 +1,445 @@
+{% extends "global/Page.html" %}
+{% load static %}
+
+{{ block style }}
+   <link rel="stylesheet" type="text/css" href="{{ static 'global/global_styles.css' }}"/>
+    <style>
+       h5 {
+           text-decoration: underline;
+       }
+   </style>
+{{ endblock }}
+
+{% block title %}
+    Part 2 Instructions
+{% endblock %}
+
+
+{% block content %}
+
+<div class="narrow-body">
+
+    <!-- ######################################### Page 1 #############################################  -->
+
+    <div id="instPage1" style="display: none;">
+
+    <div class="instructions-subheading">Random Matching and Anonymity</div>
+    <p>
+        In this part, you will be <strong>randomly reassigned to a group of 8 people</strong>.
+        The group you are assigned to will stay the same throughout <strong>Part 2</strong>.
+    </p>
+
+    <div class="instructions-subheading">Multiple Rounds</div>
+    <p>The game consists of <strong>10 decision rounds</strong>.</p>
+
+
+    <div class="instructions-subheading">Earnings</div>
+    <p>Your earnings in this part will be the <strong>sum of your earnings across all 10 rounds</strong>.</p>
+
+    <div class="instructions-subheading">Setting</div>
+
+    <p>
+        You will be playing an <strong>effort allocation game</strong>. <br>
+        In each round, you will decide how to allocate efforts between two different activities. <br>
+    </p>
+
+    <p>
+        <strong>But the following is new</strong> in this Part:
+    </p>
+
+    <div class="instructions-subheading">Sharing Rule</div>
+
+    <p style="color:red;">
+        <strong>Now, you are sharing 60% of returns from Activity G wih the group members.</strong>
+    </p>
+
+    <p>
+        More details on the next page.
+    </p>
+
+    <div style="text-align: center;">
+      <button class="button" type="button" onclick="showPage2();">Next Page >></button>
+    </div>
+
+    </div>
+
+
+<!-- ######################################### Page 2 #############################################  -->
+
+    <div id="instPage2" style="display: none;">
+
+    <div class="instructions-subheading">Settings</div>
+    <p>
+        You will be playing an <strong>effort allocation game</strong> in a <strong>group of 8 people</strong>.
+        In each round, you will decide how to allocate efforts between two different activities.
+        Each round, you are endowed with <strong>25 efforts</strong> and must decide how many to allocate
+        to <strong>Activity F</strong> and <strong>Activity G</strong>.
+    </p>
+
+    <div class="instructions-subheading">New in this game</div>
+
+        <strong>Sharing Rule</strong>
+        <br>
+    <ul>
+        <li>
+            You will <strong>share 60% of your returns from Activity G</strong> with the other group members.
+        </li>
+
+        <li>
+            You will keep the remaining 40% of your returns from Activity G for yourself.
+        </li>
+
+        <li>
+            This means you will also <strong>receive an equal share of the group’s shared returns from Activity G.</strong>
+        </li>
+
+        <li>
+            You will not share any returns from Activity F.
+        </li>
+
+    </ul>
+
+    <p>
+        So your earning in Part 2 is from <strong>Three sources</strong>.
+    </p>
+
+    <ul>
+        <li>
+            <strong>Activity F</strong>: <strong>Fixed return of E$ 5 </strong> per effort.
+        </li>
+
+        <li>
+            <strong>Activity G</strong>: <strong>Variable return</strong> depends on the
+            total efforts allocated by the entire group, including yours.
+            <br>
+            But, now you are only getting 40% from this activity.
+            <strong>Sharing 60% of earnings from Activity G</strong> with your group members.
+
+            <br> <br>
+            The return for each effort allocated to Activity G is <strong>40%</strong> of the following:
+            <br>
+            <p>
+                <strong>20 - 0.1171 × (group's total effort allocated to Activity B) E$ per effort</strong>
+            </p>
+        </li>
+
+        <li>
+            <strong>Group's Sharing</strong>: Equal share of group's shared return from Activity G.
+        </li>
+
+    </ul>
+
+    <br>
+
+    <p>
+        <strong>Do Not Worry about the Calculation.</strong> We will provide you a tool for calculating your earnings.
+    </p>
+
+    <p>
+        Your earnings for each round will depend on both <strong>your own decisions</strong>
+        and the decisions of <strong>others in your group</strong>, as well as <strong>the sharing rule for Activity G.</strong>
+    </p>
+
+    <p>
+        Below is an example of a <strong>decision page</strong>. <br>
+        More details about the decision page will be provided in the following sections.
+    </p>
+
+    <br>
+
+    <div class="card bg-secondary text-white m-3">
+    <div class="card-body">
+
+    <div style="text-align: center;">
+        <img style="width: 800px;" src="/static/tr60.png" alt="Figure 1 "><br/><br/>
+    </div>
+
+    </div>
+    </div>
+
+    <div style="text-align: center;">
+        <button class="button" type="button" onclick="showPage1();"> << Previous Page</button>&nbsp;&nbsp;&nbsp;
+        <button class="button" type="button" onclick="showPage3();">Next Page >></button>
+    </div>
+
+    </div>
+
+    <!-- ######################################### Page 3 #############################################  -->
+
+    <div id="instPage3" style="display: none;">
+
+    <div class="instructions-subheading">Your Decision</div>
+    <p>
+        Use the <strong>slider in Area A</strong> to decide your allocation to Activity G. <br>
+        Remaining effort will be automatically allocated to Activity F.
+    </p>
+
+    <br>
+
+    <div class="card bg-secondary text-white m-3">
+    <div class="card-body">
+
+    <div style="text-align: center;">
+        <img style="width: 800px;" src="/static/tr60_A.png" alt="Figure 1"><br/><br/>
+    </div>
+
+    </div>
+    </div>
+
+    <div style="text-align: center;">
+        <button class="button" type="button" onclick="showPage2();"> << Previous Page</button>&nbsp;&nbsp;&nbsp;
+      <button class="button" type="button" onclick="showPage4();">Next Page >></button>
+    </div>
+
+    </div>
+
+    <!-- ######################################### Page 4 #############################################  -->
+
+    <div id="instPage4" style="display: none;">
+
+    <div class="instructions-subheading">Guess Tool</div>
+    <p>
+        Make a guess on the average allocation of others.
+        <br>
+        How much effort you think other participants are allocating to Activity G.
+    </p>
+
+    <p>
+        Use the <strong>slider in Area B</strong>  to make your guess about the average effort allocated by others.
+        <br>
+        Based on your guess, you will see your <strong>potential earnings</strong> for this scenario.
+    </p>
+
+    <br>
+
+    <div class="card bg-secondary text-white m-3">
+    <div class="card-body">
+
+    <div style="text-align: center;">
+        <img style="width: 800px;" src="/static/tr60_B.png" alt="Figure 1"><br/><br/>
+    </div>
+
+    </div>
+    </div>
+
+    <div style="text-align: center;">
+        <button class="button" type="button" onclick="showPage3();"> << Previous Page</button>&nbsp;&nbsp;&nbsp;
+      <button class="button" type="button" onclick="showPage5();">Next Page >></button>
+    </div>
+
+    </div>
+
+     <!-- ######################################### Page 5 #############################################  -->
+
+    <div id="instPage5" style="display: block;">
+
+        <div class="card bg-light m-3">
+    <div class="card-body">
+
+        <div class="instructions-subheading">Example 1</div>
+
+        <p>
+            This is round 1 of the game. <br>
+            Assume the group's total allocation to Activity G is <strong>80 efforts</strong>.
+            <br> <br>
+            The return for each effort allocated to Activity G will be:
+            <br>
+             <strong>20 - 0.1171 × 80 = E$ 10.63 per effort</strong>
+        </p>
+
+        <p>
+            If you allocate <strong>10 efforts</strong> to Activity G, your earnings from Activity G before sharing:
+            <br>
+            <strong>10 × 10.63 = E$ 106.3 </strong>
+        </p>
+
+        <p>
+            Since You only keep <strong>40%</strong> of your returns, your personal earnings from Activity G after sharing:
+            <br>
+            <strong>106.3 × 0.4 = 42.5 ≈ E$ 43 </strong>
+        </p>
+
+        <p>
+            For your remaining <strong>15 efforts</strong> allocated to Activity F, your earnings from Activity F will be:
+            <br>
+            <strong>15 × 5 = E$ 75 </strong>
+        </p>
+
+        <p>
+            You will also receive <strong>1/8 of the group's 60% share</strong> of Activity G returns:
+            <br>
+            <strong>(10.63 × 80) × 0.6 × 1/8 = 63.8 ≈ E$ 64 </strong>
+        </p>
+
+        <p>
+            Thus, your total earnings for this round will be:
+            <br>
+            <strong>43 + 75 + 64 = E$ 182 </strong>
+        </p>
+
+        <p>
+            Figure below illustrates the example above.
+        </p>
+
+    <div style="text-align: center;">
+        <img style="width: 800px;" src="/static/tr60_ex1.png" alt="Figure 4 "><br/><br/>
+    </div>
+
+    </div>
+</div>
+
+    <div style="text-align: center;">
+        <button class="button" type="button" onclick="showPage4();"> << Previous Page</button>&nbsp;&nbsp;&nbsp;
+      <button class="button" type="button" onclick="showPage6();">Next Page >></button>
+    </div>
+
+    </div>
+
+    <!-- ######################################### Page 6 #############################################  -->
+
+        <div id="instPage6" style="display: block;">
+
+<div class="card bg-light m-3">
+    <div class="card-body">
+
+        <div class="instructions-subheading">Example 2</div>
+
+        <p>
+            This is round 2 of the game.
+            <br>
+            Assume the group's total allocation to Activity G is <strong>150 efforts</strong>.
+            <br> <br>
+            The return for each effort allocated to Activity G will be:
+            <br>
+            <strong>20 - 0.1171 × 150 = E$ 2.44 per effort</strong>
+        </p>
+
+        <p>
+            If you allocate <strong>10 efforts</strong> to Activity G, your earnings from Activity G will be:
+            <br>
+            <strong>10 × 2.44 = E$ 24.4 </strong>
+        </p>
+
+        <p>
+            Since You only keep <strong>40%</strong> of your returns, your personal earnings from Activity G after sharing:
+            <br>
+            <strong>24.4 × 0.4 = 9.8 ≈ E$ 10 </strong>
+        </p>
+
+        <p>
+            For your remaining <strong>15 efforts</strong> allocated to Activity F, your earnings from Activity F will be:
+            <br>
+            <strong>15 × 5 = E$ 75 </strong>
+        </p>
+
+        <p>
+            You will also receive <strong>1/8 of the group's 60% share</strong> of Activity G returns:
+            <br>
+            <strong>(2.44 × 150) × 0.6 × 1/8 = 27.4 ≈ E$ 27 </strong>
+        </p>
+
+        <p>
+            Thus, your total earnings for this round will be:
+            <br>
+            <strong>10 + 75 + 27 = E$ 112 </strong>
+        </p>
+
+        <p>
+            Figure below illustrates the example above.
+        </p>
+
+    <div style="text-align: center;">
+        <img style="width: 800px;" src="/static/tr60_ex2.png" alt="Figure 5 "><br/><br/>
+    </div>
+
+    </div>
+
+</div>
+        <div style="text-align: center;">
+        <button class="button" type="button" onclick="showPage5();"> << Previous Page</button>&nbsp;&nbsp;&nbsp;
+      <button class="button" style="width: 300px;" >Finish Reading Instructions</button>
+    </div>
+
+    </div>
+
+</div>
+
+
+    <!-- ######################################### Script Code #############################################  -->
+
+<script>
+
+        function showPage1() {
+
+          showPage(document.getElementById('instPage1'));
+          hidePage(document.getElementById('instPage2'));
+          hidePage(document.getElementById('instPage3'));
+          hidePage(document.getElementById('instPage4'));
+          hidePage(document.getElementById('instPage5'));
+          hidePage(document.getElementById('instPage6'));
+          $('html,body').scrollTop(0);
+        }
+        function showPage2() {
+
+          hidePage(document.getElementById('instPage1'));
+          showPage(document.getElementById('instPage2'));
+          hidePage(document.getElementById('instPage3'));
+          hidePage(document.getElementById('instPage4'));
+          hidePage(document.getElementById('instPage5'));
+          hidePage(document.getElementById('instPage6'));
+          $('html,body').scrollTop(0);
+
+        }
+        function showPage3() {
+
+          hidePage(document.getElementById('instPage1'));
+          hidePage(document.getElementById('instPage2'));
+          showPage(document.getElementById('instPage3'));
+          hidePage(document.getElementById('instPage4'));
+          hidePage(document.getElementById('instPage5'));
+          hidePage(document.getElementById('instPage6'));
+          $('html,body').scrollTop(0);
+        }
+        function showPage4() {
+
+          hidePage(document.getElementById('instPage1'));
+          hidePage(document.getElementById('instPage2'));
+          hidePage(document.getElementById('instPage3'));
+          showPage(document.getElementById('instPage4'));
+          hidePage(document.getElementById('instPage5'));
+          hidePage(document.getElementById('instPage6'));
+          $('html,body').scrollTop(0);
+        }
+         function showPage5() {
+          hidePage(document.getElementById('instPage1'));
+          hidePage(document.getElementById('instPage2'));
+          hidePage(document.getElementById('instPage3'));
+          hidePage(document.getElementById('instPage4'));
+          showPage(document.getElementById('instPage5'));
+          hidePage(document.getElementById('instPage6'));
+          $('html,body').scrollTop(0);
+        }
+        function showPage6() {
+
+          hidePage(document.getElementById('instPage1'));
+          hidePage(document.getElementById('instPage2'));
+          hidePage(document.getElementById('instPage3'));
+          hidePage(document.getElementById('instPage4'));
+          hidePage(document.getElementById('instPage5'));
+          showPage(document.getElementById('instPage6'));
+          $('html,body').scrollTop(0);
+        }
+
+        function hidePage (element) {
+        //        element.style.visibility = 'hidden';
+        element.style.display = "none";
+
+        }
+        function showPage (element) {
+        element.style.display = "block";
+
+        }
+        showPage1();
+    </script>
+
+{% endblock %}

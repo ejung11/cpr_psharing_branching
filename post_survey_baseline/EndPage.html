@@ -1,0 +1,43 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{{ block style }}
+   <link rel="stylesheet" type="text/css" href="{{ static 'global/global_styles.css' }}"/>
+{{ endblock }}
+
+{% block title %}
+<div class="narrow-body" style="text-align: center;">
+    <h2>End of the Experiment</h2>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="narrow-body" >
+
+    <p>
+        This is the end of the experiment. Thank you for your participation.
+    </p>
+
+    <p>
+        Here is the summary for your earnings today.
+    </p>
+
+    <div class="instructions">
+
+    <p>Your Earnings in Part 1 is <strong>E$ {{ player.total_earning_part1 }}</strong>. </p>
+    <p>Your Earnings in Part 2 is <strong>E$ {{ player.total_earning_part2 }}</strong>. </p>
+    <p>Your Earnings in Total is <strong>E$ {{ player.total_earning }}</strong>. </p>
+        <br>
+    <p>Total Earnings converted to U.S.D <strong>$ {{ player.total_cash }}</strong>. </p>
+    <p>For completing the post-survey, <strong>$ 3</strong>. </p>
+        <br>
+    <p>
+        Here is your final payoff in U.S.D.
+    </p>
+
+    <p>
+        You earned <strong>$ {{ player.final_cash }}</strong>.  today.
+    </p>
+    </div>
+</div>
+{% endblock %}
